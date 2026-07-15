@@ -19,7 +19,7 @@ const display = Outfit({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://adaradah.com'),
+  metadataBase: new URL('https://adah-radah.vercel.app/'),
   title: 'Adah Radah Company | Business Registration & Consulting',
   description: 'Professional business registration, CAC registration, trademark, and consulting services in Nigeria. Get your business properly registered today.',
   generator: 'insightnovatech',
