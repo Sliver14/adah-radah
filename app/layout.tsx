@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/adah.jpeg',
         width: 1200,
         height: 630,
         alt: 'Adah Radah Company Logo and Branding',
