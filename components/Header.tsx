@@ -16,7 +16,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
             <img src="/adah-radah.png" alt="Adah Radah Company Logo" className="h-9 w-9 object-contain rounded-lg border border-border" />
-            <span className="hidden font-bold text-foreground sm:inline-block text-lg">
+            <span className="font-bold text-foreground inline-block text-lg">
               Adah <span className="font-extralight">Radah</span>
             </span>
           </Link>
