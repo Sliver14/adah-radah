@@ -56,7 +56,7 @@ export default function HomePage() {
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-light">
                 You have put in the work. The customers are coming. The money is
                 moving. But without proper registration, a trademark, and legal
-                structure, everything you have built can be taken from you overnight.
+                structure, everything you have built could be at risk.
                 We have helped over 1,500 Nigerian entrepreneurs fix this properly and
                 without leaving their house.
               </p>
@@ -182,7 +182,7 @@ export default function HomePage() {
                   </div>
 
                   <div>
-                    <div className="text-lg font-bold text-foreground">36+</div>
+                    <div className="text-lg font-bold text-foreground">16+</div>
                     <div className="text-[10px] text-muted-foreground">
                       States Covered
                     </div>

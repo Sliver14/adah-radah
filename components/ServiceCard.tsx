@@ -39,12 +39,17 @@ export default function ServiceCard({ service }: ServiceCardProps) {
         </div>
 
         {/* Timeline and Price */}
-        <div className="flex items-center justify-between pt-4 border-t border-border">
+        <div className="flex items-center justify-between pt-4 border-t border-border mt-auto">
           <div>
-            <p className="text-xs text-muted-foreground">Timeline</p>
-            <p className="text-sm font-medium text-foreground">{service.timeline}</p>
+            <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Timeline</p>
+            <p className="text-xs font-semibold text-foreground">{service.timeline}</p>
           </div>
-          <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+          {service.price && (
+            <div className="text-right">
+              <p className="text-[10px] uppercase tracking-wider text-muted-foreground">Starting From</p>
+              <p className="text-xs font-bold text-secondary">{service.price.replace('From ', '')}</p>
+            </div>
+          )}
         </div>
       </div>
     </Link>
