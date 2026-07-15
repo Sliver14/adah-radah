@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Adah Radah Company | Business Registration & Consulting',
     description: 'Professional business registration, CAC registration, trademark, and consulting services in Nigeria.',
-    images: ['/og-image.png'],
+    images: ['/adah.jpeg'],
   },
 }
 export const viewport: Viewport = {
