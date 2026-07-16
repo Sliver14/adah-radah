@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import ContactForm from '@/components/ContactForm'
+import ServiceActionPanel from '@/components/ServiceActionPanel'
 import FAQAccordion from '@/components/FAQAccordion'
 import ServiceCard from '@/components/ServiceCard'
 import { getServiceBySlug, getRelatedServices, services } from '@/data/services'
@@ -176,21 +176,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="font-semibold text-foreground mb-4">Ready to proceed?</h3>
-                  <ContactForm
-                    defaultService={service.title}
-                    services={services}
-                  />
+                <div className="border-t border-border pt-4">
+                  <h3 className="font-semibold text-foreground mb-4">Start Application</h3>
+                  <ServiceActionPanel service={service} />
                 </div>
-
-                {/* CTA Button */}
-                <Link href="#enquiry-form" className="block">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium">
-                    Start Application
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
               </div>
             </div>
           </div>
@@ -258,13 +247,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Service Action Panel */}
             <div className="p-8 rounded-lg border border-border bg-card">
-              <h3 className="text-xl font-semibold text-foreground mb-6">Send Us an Enquiry</h3>
-              <ContactForm
-                defaultService={service.title}
-                services={services}
-              />
+              <h3 className="text-xl font-semibold text-foreground mb-6">Start Application</h3>
+              <ServiceActionPanel service={service} />
             </div>
           </div>
         </div>

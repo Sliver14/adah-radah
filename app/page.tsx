@@ -809,19 +809,43 @@ export default function HomePage() {
             </div>
 
             {/* Right Column */}
-            <div className="p-6 border border-border bg-card rounded-2xl shadow-sm">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#008069] mb-4 block">Services at a glance</span>
-              <div className="divide-y divide-border">
+            <div className="p-6 border border-border bg-card rounded-2xl shadow-sm space-y-6 md:col-span-1">
+              <span className="text-xs font-bold uppercase tracking-wider text-secondary mb-2 block">Services at a glance</span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                 {[
-                  { label: 'Business Registration', val: 'BN, RC, & IT' },
-                  { label: 'Brand Protection', val: 'Trademark & Copyright' },
-                  { label: 'Compliance', val: 'Annual Returns, SCUML, Tax' },
-                  { label: 'Permits & Licences', val: 'NAFDAC, SON, State' },
-                  { label: 'Advisory & Planning', val: 'AI + Human' }
-                ].map((row, idx) => (
-                  <div key={idx} className="flex justify-between py-3 text-sm">
-                    <span className="text-muted-foreground font-medium">{row.label}</span>
-                    <span className="text-foreground font-semibold">{row.val}</span>
+                  {
+                    category: 'BUSINESS REGISTRATION',
+                    items: ['Business Name', 'Limited Liability Company']
+                  },
+                  {
+                    category: 'INCORPORATED TRUSTEES',
+                    items: ['NGO, Foundation, Association, Alumni, Charity Organization', 'Religious Organisations']
+                  },
+                  {
+                    category: 'COMPLIANCE',
+                    items: ['TIN & REV360', 'SCUML', 'Export License', 'NAFDAC Registration']
+                  },
+                  {
+                    category: 'BRAND PROTECTION',
+                    items: ['Trademark', 'Copyright']
+                  },
+                  {
+                    category: 'POST INCORPORATION',
+                    items: ['Annual Returns', 'Change of Director', 'Increase Of Share Capital']
+                  }
+                ].map((sec, idx) => (
+                  <div key={idx} className="space-y-2">
+                    <h4 className="text-[10px] font-bold tracking-wider text-foreground uppercase border-b border-border/60 pb-1">
+                      {sec.category}
+                    </h4>
+                    <ul className="space-y-1">
+                      {sec.items.map((item, itemIdx) => (
+                        <li key={itemIdx} className="text-xs text-muted-foreground flex items-start gap-1.5 font-light">
+                          <span className="h-1.5 w-1.5 rounded-full bg-secondary flex-shrink-0 mt-1.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
