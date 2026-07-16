@@ -7,9 +7,10 @@ import type { Service } from '@/data/services'
 
 interface ServiceActionPanelProps {
   service: Service
+  hidePaymentDetails?: boolean
 }
 
-export default function ServiceActionPanel({ service }: ServiceActionPanelProps) {
+export default function ServiceActionPanel({ service, hidePaymentDetails = false }: ServiceActionPanelProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = () => {
@@ -153,32 +154,34 @@ export default function ServiceActionPanel({ service }: ServiceActionPanelProps)
   return (
     <div className="space-y-6">
       {/* Account Details Box */}
-      <div className="bg-muted/50 rounded-xl p-4 border border-border">
-        <h4 className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-3">Payment Details</h4>
-        <div className="space-y-2 text-sm text-foreground">
-          <div className="flex justify-between items-center text-xs">
-            <span className="text-muted-foreground font-light">Bank</span>
-            <span className="font-semibold text-foreground">GTBank</span>
-          </div>
-          <div className="flex justify-between items-center text-xs">
-            <span className="text-muted-foreground font-light">Account Name</span>
-            <span className="font-semibold text-foreground">Adar Radah Company</span>
-          </div>
-          <div className="flex justify-between items-center gap-2 pt-2 border-t border-border/60 mt-1.5">
-            <span className="text-xs text-muted-foreground font-light">Account Number</span>
-            <div className="flex items-center gap-1.5 justify-end">
-              <button 
-                onClick={handleCopy}
-                className="p-1 rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-all mr-0.5"
-                title="Copy Account Number"
-              >
-                {copied ? <Check className="h-3.5 w-3.5 text-green-600 animate-pulse" /> : <Copy className="h-3.5 w-3.5" />}
-              </button>
-              <span className="font-semibold text-foreground">0435966811</span>
+      {!hidePaymentDetails && (
+        <div className="bg-muted/50 rounded-xl p-4 border border-border">
+          <h4 className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground mb-3">Payment Details</h4>
+          <div className="space-y-2 text-sm text-foreground">
+            <div className="flex justify-between items-center text-xs">
+              <span className="text-muted-foreground font-light">Bank</span>
+              <span className="font-semibold text-foreground">GTBank</span>
+            </div>
+            <div className="flex justify-between items-center text-xs">
+              <span className="text-muted-foreground font-light">Account Name</span>
+              <span className="font-semibold text-foreground">Adar Radah Company</span>
+            </div>
+            <div className="flex justify-between items-center gap-2 pt-2 border-t border-border/60 mt-1.5">
+              <span className="text-xs text-muted-foreground font-light">Account Number</span>
+              <div className="flex items-center gap-1.5 justify-end">
+                <button 
+                  onClick={handleCopy}
+                  className="p-1 rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-all mr-0.5"
+                  title="Copy Account Number"
+                >
+                  {copied ? <Check className="h-3.5 w-3.5 text-green-600 animate-pulse" /> : <Copy className="h-3.5 w-3.5" />}
+                </button>
+                <span className="font-semibold text-foreground">0435966811</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Actions */}
       <div className="space-y-3">

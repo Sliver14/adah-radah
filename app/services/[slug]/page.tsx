@@ -252,7 +252,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             {/* Service Action Panel */}
             <div className="p-8 rounded-lg border border-border bg-card">
               <h3 className="text-xl font-semibold text-foreground mb-6">Start Application</h3>
-              <ServiceActionPanel service={service} />
+              <ServiceActionPanel service={service} hidePaymentDetails={true} />
             </div>
           </div>
         </div>
