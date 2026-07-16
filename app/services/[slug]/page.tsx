@@ -12,6 +12,7 @@ import {
   FileText,
   HelpCircle,
   ArrowRight,
+  ArrowLeft,
   Award,
   AlertCircle,
 } from 'lucide-react'
@@ -64,9 +65,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="mx-auto max-w-4xl">
           <Link
             href="/services"
-            className="text-primary hover:text-primary/80 transition-colors flex items-center gap-1 mb-6 text-sm"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-card/75 hover:bg-card hover:border-primary/20 text-xs font-semibold text-muted-foreground hover:text-primary transition-all duration-300 shadow-sm group mb-6"
           >
-            ← Back to Services
+            <ArrowLeft className="h-3.5 w-3.5 group-hover:-translate-x-0.5 transition-transform" />
+            Back to Services
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">{service.title}</h1>
           <p className="text-xl text-muted-foreground mb-8">{service.description}</p>

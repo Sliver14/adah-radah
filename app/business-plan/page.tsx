@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { submitContactForm } from '@/lib/actions'
-import { AlertCircle, CheckCircle, Loader2, ArrowRight } from 'lucide-react'
+import { AlertCircle, CheckCircle, Loader2, ArrowRight, ArrowLeft } from 'lucide-react'
 
 export default function BusinessPlanWaitlistPage() {
   const [loading, setLoading] = useState(false)
@@ -66,9 +66,10 @@ export default function BusinessPlanWaitlistPage() {
         <div className="text-center mb-10">
           <Link
             href="/"
-            className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 mb-6 text-sm font-semibold"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-card/75 hover:bg-card hover:border-primary/20 text-xs font-semibold text-muted-foreground hover:text-primary transition-all duration-300 shadow-sm group mb-6"
           >
-            &larr; Back to Home
+            <ArrowLeft className="h-3.5 w-3.5 group-hover:-translate-x-0.5 transition-transform" />
+            Back to Home
           </Link>
           <h1 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
             AI-Powered Business Plan Builder
