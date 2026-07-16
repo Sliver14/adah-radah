@@ -128,16 +128,28 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 md:py-24 bg-primary/[0.025] overflow-hidden border-t border-border">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "url('/Network connecting dot polygon background _ Premium Photo.jpg')",
+          }}
+        />
+
+        {/* Optional subtle dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/5" />
+
+        <div className="mx-auto max-w-4xl text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Let's Help You Register Your Business
+            Let&apos;s Help You Register Your Business
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
             Join our growing community of successful business owners across Nigeria.
           </p>
           <Link href="/contact">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground text-base py-3 px-8 h-auto">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground text-base py-3.5 px-8 h-auto rounded-full shadow-md font-semibold">
               Get Started Today
             </Button>
           </Link>
