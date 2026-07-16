@@ -160,16 +160,28 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-24 bg-gradient-to-r from-primary to-secondary/80">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 md:py-24 bg-primary/[0.025] overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "url('/Network connecting dot polygon background _ Premium Photo.jpg')",
+          }}
+        />
+
+        {/* Optional subtle dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/5" />
+
+        <div className="mx-auto max-w-4xl text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Ready to Get Your Business Registered?
           </h2>
-          <p className="text-lg text-primary-foreground/90 mb-8">
+          <p className="text-lg text-muted-foreground mb-8">
             Contact us today for a free consultation about which service is right for your business.
           </p>
           <Link href="/contact">
-            <Button className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-medium py-3 px-8 h-auto text-base">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3.5 px-8 h-auto text-base rounded-full shadow-md">
               Get In Touch
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

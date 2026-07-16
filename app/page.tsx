@@ -196,7 +196,7 @@ export default function HomePage() {
 
       {/* Proof Bar Section */}
       <div className="bg-muted/70 py-4 border-b border-border text-xs text-muted-foreground">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-4 text-center">
           <span className="font-bold text-foreground uppercase tracking-wider text-[10px]">Why choose us</span>
           <span className="h-3 w-px bg-border hidden md:inline-block"></span>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">

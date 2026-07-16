@@ -19,40 +19,133 @@ export default function ServiceActionPanel({ service }: ServiceActionPanelProps)
   }
 
   const handleDownload = () => {
-    const content = `
-ADAH RADAH COMPANY
-==================================
-SERVICE: ${service.title.toUpperCase()}
-PROCESSING TIME: ${service.timeline}
-PRICE: ${service.price || 'Contact us'}
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
 
-REQUIREMENTS NEEDED FROM YOU:
-${service.requirements.map((r, i) => `${i + 1}. ${r}`).join('\n')}
+    const requirementsList = service.requirements.map(r => `<li style="margin-bottom: 8px;">${r}</li>`).join('');
+    const deliverablesList = service.documents.map(d => `<li style="margin-bottom: 8px;">${d}</li>`).join('');
 
-WHAT YOU WILL RECEIVE (DELIVERABLES):
-${service.documents.map((d, i) => `- ${d}`).join('\n')}
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>${service.title} - Requirements</title>
+          <style>
+            body {
+              font-family: system-ui, -apple-system, sans-serif;
+              color: #3A0A5C;
+              padding: 40px;
+              max-width: 650px;
+              margin: 0 auto;
+              line-height: 1.6;
+            }
+            .header-logo {
+              font-size: 22px;
+              font-weight: 800;
+              margin-bottom: 25px;
+              border-bottom: 2px solid #3A0A5C;
+              padding-bottom: 10px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
+            h1 {
+              font-size: 20px;
+              font-weight: 700;
+              margin-bottom: 8px;
+            }
+            .meta {
+              font-size: 13px;
+              color: #666;
+              margin-bottom: 30px;
+              font-weight: 350;
+            }
+            h2 {
+              font-size: 14px;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              margin-top: 25px;
+              margin-bottom: 10px;
+              border-bottom: 1px solid #e8dbf5;
+              padding-bottom: 5px;
+            }
+            ul {
+              margin: 0;
+              padding-left: 20px;
+              font-size: 13px;
+            }
+            .payment {
+              background: #fcf8ff;
+              border: 1px solid #e8dbf5;
+              border-radius: 12px;
+              padding: 20px;
+              margin-top: 40px;
+              font-size: 13px;
+            }
+            .payment-title {
+              font-weight: bold;
+              text-transform: uppercase;
+              font-size: 11px;
+              letter-spacing: 0.5px;
+              margin-bottom: 12px;
+              color: #8a62b8;
+            }
+            .payment-row {
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 6px;
+              padding-bottom: 6px;
+              border-bottom: 1px dashed #f0e6fa;
+            }
+            .payment-row:last-child {
+              border-bottom: none;
+              margin-bottom: 0;
+              padding-bottom: 0;
+            }
+            @media print {
+              body { padding: 20px; }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="header-logo">Adah Radah Company</div>
+          <h1>Requirements & Guidelines</h1>
+          <div class="meta">
+            Service: <strong>${service.title}</strong> &middot; Timeline: <strong>${service.timeline}</strong>
+          </div>
 
-==================================
-PAYMENT DETAILS:
-Bank: GTBank
-Account Name: Adar Radah Company
-Account Number: 0435966811
-==================================
+          <h2>Required Documents & Information</h2>
+          <ul>${requirementsList}</ul>
 
-How to proceed:
-1. Pay the fee to the GTBank account above.
-2. Click 'Proceed to WhatsApp' on our website or message +234 806 920 4009.
-3. Send your proof of payment and the required documents listed above.
-`
-    const blob = new Blob([content.trim()], { type: 'text/plain;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = `${service.slug}-requirements.txt`
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-    URL.revokeObjectURL(url)
+          <h2>Deliverables (What you will receive)</h2>
+          <ul>${deliverablesList}</ul>
+
+          <div class="payment">
+            <div class="payment-title">Payment & Processing Details</div>
+            <div class="payment-row">
+              <span>Bank Name</span>
+              <strong>GTBank</strong>
+            </div>
+            <div class="payment-row">
+              <span>Account Name</span>
+              <strong>Adar Radah Company</strong>
+            </div>
+            <div class="payment-row">
+              <span>Account Number</span>
+              <strong>0435966811</strong>
+            </div>
+          </div>
+          <script>
+            window.onload = function() {
+              window.print();
+              setTimeout(function() {
+                window.close();
+              }, 500);
+            }
+          </script>
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
   }
 
   const whatsappLink = `https://wa.me/2348069204009?text=Hi+Adah+Radah%2C+I+want+to+start+registration+for+${encodeURIComponent(service.title)}.`
@@ -73,15 +166,15 @@ How to proceed:
           </div>
           <div className="flex justify-between items-center gap-2 pt-2 border-t border-border/60 mt-1.5">
             <span className="text-xs text-muted-foreground font-light">Account Number</span>
-            <div className="flex items-center gap-1.5">
-              <span className="font-mono font-bold text-secondary text-xs">0435966811</span>
+            <div className="flex items-center gap-1.5 justify-end">
               <button 
                 onClick={handleCopy}
-                className="p-1 rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-all"
+                className="p-1 rounded hover:bg-muted text-muted-foreground hover:text-foreground transition-all mr-0.5"
                 title="Copy Account Number"
               >
                 {copied ? <Check className="h-3.5 w-3.5 text-green-600 animate-pulse" /> : <Copy className="h-3.5 w-3.5" />}
               </button>
+              <span className="font-semibold text-foreground">0435966811</span>
             </div>
           </div>
         </div>
