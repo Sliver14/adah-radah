@@ -108,7 +108,10 @@ export default function ServiceActionPanel({ service, hidePaymentDetails = false
           </style>
         </head>
         <body>
-          <div class="header-logo">Adah Radah Company</div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 25px; border-bottom: 2px solid #3A0A5C; padding-bottom: 15px;">
+            <img src="/adah-radah.png" alt="Adah Radah Company Logo" style="height: 40px; width: 40px; object-fit: contain;" />
+            <span style="font-size: 22px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Adah Radah Company</span>
+          </div>
           <h1>Requirements & Guidelines</h1>
           <div class="meta">
             Service: <strong>${service.title}</strong> &middot; Timeline: <strong>${service.timeline}</strong>
