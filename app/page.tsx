@@ -38,7 +38,7 @@ export default function HomePage() {
             <div className="space-y-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-                <span className="text-xs font-medium uppercase tracking-wider text-secondary">
+                <span className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-secondary">
                   CAC &middot; Trademark &middot; Compliance &middot; Advisory
                 </span>
               </div>
@@ -226,7 +226,7 @@ export default function HomePage() {
           <div className="text-left mb-12">
             <div className="flex items-center gap-2 mb-3">
               <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-              <span className="text-sm font-semibold uppercase tracking-wider text-secondary">Our Services</span>
+              <span className="text-[11px] md:text-sm font-semibold uppercase tracking-wider text-secondary">Our Services</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Services</h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl">
@@ -258,7 +258,7 @@ export default function HomePage() {
           <div className="text-left mb-12">
             <div className="flex items-center gap-2 mb-3">
               <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-              <span className="text-sm font-semibold uppercase tracking-wider text-secondary">How It Works</span>
+              <span className="text-[11px] md:text-sm font-semibold uppercase tracking-wider text-secondary">How It Works</span>
             </div>
             <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
               From Application to Certificate: 3 Simple Steps
@@ -342,7 +342,7 @@ export default function HomePage() {
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-3">
             <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-            <span className="text-sm font-semibold uppercase tracking-wider text-secondary">By the numbers</span>
+            <span className="text-[11px] md:text-sm font-semibold uppercase tracking-wider text-secondary">By the numbers</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
             Adah Radah at a Glance
@@ -384,7 +384,7 @@ export default function HomePage() {
           <div className="text-left mb-12">
             <div className="flex items-center gap-2 mb-3">
               <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-              <span className="text-sm font-semibold uppercase tracking-wider text-secondary">Client Stories</span>
+              <span className="text-[11px] md:text-sm font-semibold uppercase tracking-wider text-secondary">Client Stories</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">Real Businesses. Real Results.</h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl font-light">
@@ -531,7 +531,7 @@ export default function HomePage() {
           <div className="text-left mb-12">
             <div className="flex items-center gap-2 mb-3">
               <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-              <span className="text-sm font-semibold uppercase tracking-wider text-secondary">WhatsApp Feeds</span>
+              <span className="text-[11px] md:text-sm font-semibold uppercase tracking-wider text-secondary">WhatsApp Feeds</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">What Clients Actually Say</h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl">
@@ -654,7 +654,7 @@ export default function HomePage() {
           <div className="text-left mb-12">
             <div className="flex items-center gap-2 mb-3">
               <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-              <span className="text-sm font-semibold uppercase tracking-wider text-secondary">Free Resources</span>
+              <span className="text-[11px] md:text-sm font-semibold uppercase tracking-wider text-secondary">Free Resources</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Free Resources to Help You Build Smart
@@ -749,7 +749,7 @@ export default function HomePage() {
           <div className="text-left mb-12">
             <div className="flex items-center gap-2 mb-3">
               <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-              <span className="text-sm font-semibold uppercase tracking-wider text-secondary">Common questions</span>
+              <span className="text-[11px] md:text-sm font-semibold uppercase tracking-wider text-secondary">Common questions</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What People Ask</h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl font-light">
@@ -769,7 +769,7 @@ export default function HomePage() {
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-3">
             <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-            <span className="text-sm font-semibold uppercase tracking-wider text-secondary">About Us</span>
+            <span className="text-[11px] md:text-sm font-semibold uppercase tracking-wider text-secondary">About Us</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10 leading-tight">
             We Help Nigerian Businesses<br />
