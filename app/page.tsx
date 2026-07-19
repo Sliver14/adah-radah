@@ -18,7 +18,7 @@ export default function HomePage() {
 
   return (
     <div className="w-full">      {/* Hero Section */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 md:py-18 lg:py-24 overflow-hidden">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-18 lg:py-24 overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-[0.08]"
@@ -28,66 +28,20 @@ export default function HomePage() {
           }}
         />
 
-        {/* Optional subtle color overlay */}
-        <div className="absolute inset-0 bg-primary/[0.02]" />
+        {/* Gradient overlay for mobile impact */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.08] via-transparent to-background/50" />
 
         {/* Content */}
         <div className="mx-auto max-w-7xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left: Copy */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="h-[2px] w-6 bg-secondary inline-block"></span>
-                <span className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-secondary">
-                  CAC &middot; Trademark &middot; Compliance &middot; Advisory
-                </span>
-              </div>
-
-              <h1 className="text-3xl md:text-5xl font-extrabold text-foreground leading-tight">
-                Build on Solid Ground.
-                <br />
-                <em className="italic font-serif text-primary">
-                  Register Your Business
-                </em>
-                <br />
-                <span className="text-secondary">Today.</span>
-              </h1>
-
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-light">
-                You have put in the work. The customers are coming. The money is
-                moving. But without proper registration, a trademark, and legal
-                structure, everything you have built could be at risk.
-                We have helped over 1,500 Nigerian entrepreneurs fix this properly and
-                without leaving their house.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <a
-                  href="#services"
-                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-primary hover:bg-primary/95 text-primary-foreground px-6 py-3 font-semibold transition-all text-sm shadow-md"
-                >
-                  See Our Services
-                </a>
-
-                <a
-                  href="https://wa.me/2348069204009"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-primary/20 hover:border-primary px-6 py-3 font-semibold text-foreground transition-all text-sm bg-card/50"
-                >
-                  Talk to an Advisor
-                </a>
-              </div>
-            </div>
-
-            {/* Right: At a Glance Card */}
-            <div className="bg-card border border-border rounded-2xl p-6 shadow-xl max-w-md mx-auto w-full">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+            {/* Mobile: At a Glance Card comes first on mobile for visual impact */}
+            <div className="order-first md:order-last bg-gradient-to-br from-card to-card/95 border border-border/50 rounded-2xl p-5 sm:p-6 shadow-xl max-w-md mx-auto w-full hover:shadow-2xl transition-shadow">
               <p className="text-xs font-bold uppercase tracking-wider text-secondary mb-4 block">
                 At a glance
               </p>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl border border-border/80 bg-background/50 flex items-start gap-3">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="p-4 rounded-xl border border-border/80 bg-background/50 flex items-start gap-3 hover:bg-background/70 transition-colors">
                   <div className="text-primary mt-0.5">
                     <svg
                       width="16"
@@ -114,7 +68,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl border border-border/80 bg-background/50 flex items-start gap-3">
+                <div className="p-4 rounded-xl border border-border/80 bg-background/50 flex items-start gap-3 hover:bg-background/70 transition-colors">
                   <div className="text-[#008069] mt-0.5">
                     <svg
                       width="16"
@@ -138,7 +92,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl border border-border/80 bg-background/50 flex items-start gap-3">
+                <div className="p-4 rounded-xl border border-border/80 bg-background/50 flex items-start gap-3 hover:bg-background/70 transition-colors">
                   <div className="text-secondary mt-0.5">
                     <svg
                       width="16"
@@ -163,7 +117,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl border border-border/80 bg-background/50 flex items-start gap-3">
+                <div className="p-4 rounded-xl border border-border/80 bg-background/50 flex items-start gap-3 hover:bg-background/70 transition-colors">
                   <div className="text-[#008069] mt-0.5">
                     <svg
                       width="16"
@@ -188,6 +142,52 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Left: Copy */}
+            <div className="space-y-4 sm:space-y-6 order-last md:order-first">
+              <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                <span className="h-[2px] w-6 bg-secondary inline-block"></span>
+                <span className="text-[10px] md:text-xs font-medium uppercase tracking-wider text-secondary">
+                  CAC &middot; Trademark &middot; Compliance &middot; Advisory
+                </span>
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight">
+                Build on Solid Ground.
+                <br />
+                <em className="italic font-serif text-primary">
+                  Register Your Business
+                </em>
+                <br />
+                <span className="text-secondary">Today.</span>
+              </h1>
+
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed font-light">
+                You have put in the work. The customers are coming. The money is
+                moving. But without proper registration, a trademark, and legal
+                structure, everything you have built could be at risk.
+                We have helped over 1,500 Nigerian entrepreneurs fix this properly and
+                without leaving their house.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
+                <a
+                  href="#services"
+                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 font-semibold transition-all text-sm shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  See Our Services
+                </a>
+
+                <a
+                  href="https://wa.me/2348069204009"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-primary/20 hover:border-primary px-6 py-3 font-semibold text-foreground transition-all text-sm bg-card/50 hover:bg-card hover:shadow-md"
+                >
+                  Talk to an Advisor
+                </a>
               </div>
             </div>
           </div>
