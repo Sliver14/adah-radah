@@ -20,6 +20,43 @@ export default function ServiceActionPanel({ service, hidePaymentDetails = false
   }
 
   const handleDownload = () => {
+    const isMobile = typeof window !== 'undefined' && (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768);
+
+    if (isMobile) {
+      const requirementsList = service.requirements.map(r => `• ${r}`).join('\n');
+      const deliverablesList = service.documents.map(d => `• ${d}`).join('\n');
+      
+      const textContent = `ADAH RADAH COMPANY
+====================================
+Requirements & Guidelines
+====================================
+Service: ${service.title}
+Timeline: ${service.timeline}
+
+REQUIRED DOCUMENTS & INFORMATION:
+${requirementsList}
+
+DELIVERABLES (WHAT YOU WILL RECEIVE):
+${deliverablesList}
+
+PAYMENT & PROCESSING DETAILS:
+Bank Name: GTBank
+Account Name: Adar Radah Company
+Account Number: 0435966811
+`;
+
+      const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-requirements.txt`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      return;
+    }
+
     const printWindow = window.open('', '_blank');
     if (!printWindow) return;
 

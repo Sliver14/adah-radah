@@ -3,14 +3,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import ServiceActionPanel from '@/components/ServiceActionPanel'
-import FAQAccordion from '@/components/FAQAccordion'
 import ServiceCard from '@/components/ServiceCard'
 import { getServiceBySlug, getRelatedServices, services } from '@/data/services'
 import {
   CheckCircle,
   Clock,
   FileText,
-  HelpCircle,
   ArrowRight,
   ArrowLeft,
   Award,
@@ -145,14 +143,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </div>
               </div>
 
-              {/* FAQs */}
-              <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
-                  <HelpCircle className="h-6 w-6 text-secondary" />
-                  Frequently Asked Questions
-                </h2>
-                <FAQAccordion items={service.faqs} />
-              </div>
             </div>
 
             {/* Right Column - Sticky CTA */}
